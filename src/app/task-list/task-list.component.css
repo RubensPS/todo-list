@@ -3,7 +3,7 @@
   }
   
   .container {
-    padding-top: 160px;
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
