@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
+  private _route = inject(ActivatedRoute);
 
   constructor() { }
 
   ngOnInit(): void {
+    let date = new Date(this._route.snapshot.params['date']);
+    console.log(date);
   }
 
   tasks: Task[] = [new Task('Visit Ann'), new Task('Call dad'), new Task('go to the gym'), new Task('Pay bills')];
